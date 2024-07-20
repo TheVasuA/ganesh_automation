@@ -2,6 +2,7 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import logo from "../assets/logo.png";
 import { navItems } from "../constants";
+import { BiMenu, BiPhoneCall } from "react-icons/bi";
 
 const Navbar = () => {
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
@@ -16,7 +17,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center flex-shrink-0">
             <img className="h-10 w-10 mr-2" src={logo} alt="Logo" />
-            <span className="text-xl tracking-tight">VirtualR</span>
+            <span className="text-2xl tracking-tight bg-gradient-to-r from-orange-600 via-yellow-500 to-red-400 inline-block text-transparent bg-clip-text ">Sri Ganesh Automation</span>
           </div>
           <ul className="hidden lg:flex ml-14 space-x-12">
             {navItems.map((item, index) => (
@@ -25,16 +26,28 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
+
           <div className="hidden lg:flex justify-center space-x-12 items-center">
             <a href="#" className="py-2 px-3 border rounded-md">
-              Sign In
+              Gallery
             </a>
             <a
               href="#"
               className="bg-gradient-to-r from-orange-500 to-orange-800 py-2 px-3 rounded-md"
             >
-              Create an account
+              Contact Us
             </a>
+            <div className="flex items-center gap-4 hidden lg:flex list-none">
+              <li>
+                <BiPhoneCall className="h-[50px] w-[50px] rounded-md bg-primary p-2 text-2xl text-white hover:bg-primary/90" />
+              </li>
+              <li>
+                <div>
+                  <p className="text-sm">Call us on</p>
+                  <p className="text-md">+91 9790889371</p>
+                </div>
+              </li>
+            </div>
           </div>
           <div className="lg:hidden md:flex flex-col justify-end">
             <button onClick={toggleNavbar}>
@@ -53,13 +66,13 @@ const Navbar = () => {
             </ul>
             <div className="flex space-x-6">
               <a href="#" className="py-2 px-3 border rounded-md">
-                Sign In
+                Gallery
               </a>
               <a
                 href="#"
                 className="py-2 px-3 rounded-md bg-gradient-to-r from-orange-500 to-orange-800"
               >
-                Create an account
+                Contact Us
               </a>
             </div>
           </div>
